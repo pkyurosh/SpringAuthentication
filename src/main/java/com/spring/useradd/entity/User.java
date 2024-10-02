@@ -1,5 +1,15 @@
 package com.spring.useradd.entity;
 
+
+import java.util.Collection;
+import java.util.Collections;
+
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,7 +17,7 @@ import jakarta.persistence.Id;
 
 
 @Entity
-public class User {
+public class User implements UserDetails{ 
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -31,9 +41,7 @@ public class User {
         this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
-    }
+
 
     public void setPassword(String password) {
         this.password = password;
@@ -45,6 +53,20 @@ public class User {
     
     public void setEmail(String email) {
         this.email = email;
+    }
+ @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singleton(new SimpleGrantedAuthority("USER"));
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return userName;
     }
 
 }

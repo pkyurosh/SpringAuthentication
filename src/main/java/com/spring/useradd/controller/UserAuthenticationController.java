@@ -31,7 +31,7 @@ public class UserAuthenticationController {
     @PostMapping
     public String checkLogInDetails(@ModelAttribute User user, Model model, RedirectAttributes redirectAttributes) {
       
-        boolean checkAuthDetails = userAuthenticationService.checkAuthDetails(user);
+        boolean checkAuthDetails = userAuthenticationService.loginUser(user);
         
         if(checkAuthDetails){ 
             redirectAttributes.addFlashAttribute("userName", user.getUserName());

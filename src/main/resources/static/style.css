@@ -1,59 +1,100 @@
-/* General styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Navbar styles */
-  .navbar {
-    background-color: #116dc9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #ffffff !important;
-  }
-  
-  .nav-link {
-    color: #ffffff !important;
-    font-size: 1.1rem;
-    margin-right: 15px;
-    transition: color 0.3s;
-  }
-  
-  .nav-link:hover {
-    color: #2ef00c !important;
-  }
-  
-  .btn-outline-success {
-    border-color: #17a2b8;
-    color: #ffffff;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .btn-outline-success:hover {
-    background-color: #17a2b8;
-    color: #ffffff;
-  }
-  
-  /* Main content styles */
-  #mainpart {
-    padding: 20px;
-  }
-  
-  fieldset {
-    min-width: 4px;
-    padding: 0px;
-    margin: 7px;
-    border: 18;
-    padding-left: 40rem;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.btn-success {
-    color: #fff;
-    background-color: #12ff02;
-    border-color: #198754;
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Center the form container */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Form Container Styling */
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: left;
+}
+
+/* Form Fieldset */
+fieldset {
+  border: none;
+}
+
+/* Form Legend */
+legend {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Fields Styling */
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5752d7;
+}
+
+/* Error Message Styling */
+.text-danger {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Label Styling */
+label {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Control Group Styling */
+.control-group {
+  margin-bottom: 15px;
 }

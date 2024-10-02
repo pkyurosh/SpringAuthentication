@@ -17,7 +17,7 @@ public class UserAuthentiationServiceImpl implements UserAuthenticationService {
     userRepository userRepo;
 
     @Override
-    public boolean checkAuthDetails(User user) {
+    public boolean loginUser(User user) {
         User dbUser = userRepo.findByUserName(user.getUserName());
         if (dbUser == null) {
             return false;
@@ -31,7 +31,7 @@ public class UserAuthentiationServiceImpl implements UserAuthenticationService {
     }
 
     @Override
-    public void saveUser(User user) {
+    public void registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepo.save(user);
     }

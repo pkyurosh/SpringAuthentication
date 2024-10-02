@@ -37,7 +37,7 @@ public class BaseUserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user){
-        userAuthenticationService.saveUser(user);
+        userAuthenticationService.registerUser(user);
         return "redirect:/login";
     }   
 }
